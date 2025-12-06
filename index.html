@@ -36,6 +36,130 @@
     @media (max-width:420px){ .card img { height:150px; } }
   </style>
 </head>
+  <!-- ========== INICIO: Estilos modernos añadidos (no borrar) ========== -->
+  <!-- Fuente moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Paleta: beach claro (arena + mint suave) */
+    :root{
+      --bg-beach: #f6fbf7;      /* fondo general muy claro (casi arena/pastel) */
+      --accent: #68c3a3;        /* mint suave para botones/accentos */
+      --card-bg: rgba(255,255,255,0.9);
+      --muted: #6b6b6b;
+      --shadow: 0 10px 30px rgba(29,34,40,0.08);
+      --radius: 14px;
+      --container-w: 1100px;
+      --glass: rgba(255,255,255,0.6);
+    }
+
+    /* Global */
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg-beach) 0%, #eefaf3 100%);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Contenedor centrado con padding y ligera sombra */
+    .container{
+      max-width: var(--container-w);
+      margin: 36px auto;
+      padding: 28px;
+      box-sizing:border-box;
+    }
+
+    /* Card del catálogo: mayor contraste, radio y sombra */
+    .card{
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding:14px;
+      box-shadow: var(--shadow);
+      transition: transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease;
+      overflow:hidden;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(29,34,40,0.12);
+    }
+
+    /* Imágenes con borde suave */
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      border-radius: 10px;
+      display:block;
+    }
+
+    /* Cabeceras y textos */
+    header{
+      text-align:center;
+      margin-bottom: 22px;
+    }
+    header h1{
+      margin:0;
+      font-size: clamp(20px, 3.4vw, 34px);
+      letter-spacing:-0.4px;
+      font-weight:700;
+    }
+    header p{ color:var(--muted); margin:8px 0 0; font-weight:400; }
+
+    /* Grid responsive */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap:18px;
+    }
+
+    /* Precio y descripción */
+    .price{ font-weight:700; color: #14784f; margin-top:8px; }
+    .card h3{ margin:10px 0 6px; font-size:1.05rem; }
+
+    /* Botones: estilo moderno y consistente */
+    .buttons{ display:flex; gap:10px; margin-top:10px; }
+    .btn{
+      flex:1;
+      padding:10px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      cursor:pointer;
+      border: none;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .whatsapp{ background: linear-gradient(90deg,var(--accent), #3fc58b); color:white; box-shadow: 0 6px 18px rgba(32,128,90,0.08); }
+    .email{ background: transparent; border: 1.2px solid rgba(20,120,80,0.12); color: #0f1720; backdrop-filter: blur(4px); }
+
+    /* Footer */
+    footer{ text-align:center; color:var(--muted); margin-top:20px; font-size:.95rem; }
+
+    /* móvil: reducir alturas de imagen y espacio */
+    @media (max-width:480px){
+      .card img{ height:150px; }
+      .container{ padding:16px; margin:18px auto; }
+    }
+
+    /* Pequeño efecto decorativo en los bordes del sitio */
+    .site-frame{
+      border-radius:20px;
+      padding:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+      box-shadow: 0 8px 28px rgba(15,23,42,0.05);
+    }
+  </style>
+  <!-- ========== FIN: Estilos modernos añadidos ========== -->
+
 <body>
   <div class="container">
     <header>
